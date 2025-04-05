@@ -4,13 +4,15 @@ import BaseList from '../../../components/dashboard/BaseList'
 import Modal from '../../../components/common/Modal'
 import { BaseListProps, Lecture } from '../../../types/common'
 
-interface LecturesListProps extends BaseListProps {
+export interface BaseListProps {
+  title: string;
   items: Lecture[];
   onAdd: () => void;
   onEdit: (lecture: Lecture) => void;
   onDelete: (id: number) => Promise<void>;
-  renderItem: (lecture: Lecture) => JSX.Element;
+  renderItem: (lecture: Lecture) => JSX.Element; // or React.ReactNode
 }
+
 
 const mockLectures: Lecture[] = [
   {
